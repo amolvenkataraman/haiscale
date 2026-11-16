@@ -320,7 +320,7 @@ function renderQuiz(node = "start") {
 
 /* Step 2: placements */
 const chipFile = (c, ext = "svg") => `badge/${c}${state.theme === "dark" ? "-dark" : ""}.${ext}`;
-const chipPng = (c, x) => `badge/png/${c}${state.theme === "dark" ? "-dark" : ""}@${x}x.png`;
+const chipPng = (c, x) => `badge/png/${c}${state.theme === "dark" ? "-dark" : ""}-${x}x.png`;
 const line = t => `${alt(t)} · ${BASE}/${t.code}/`;
 const PLACES = [
   { id: "web", label: "Website or blog", style: "chip",

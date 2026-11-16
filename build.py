@@ -239,8 +239,8 @@ def export_rasters():
         c = t["code"]
         for suffix in ("", "-dark"):
             w = chip_width(t)
-            png(b / f"{c}{suffix}.svg", b / "png" / f"{c}{suffix}@2x.png", w * 2)
-            png(b / f"{c}{suffix}.svg", b / "png" / f"{c}{suffix}@4x.png", w * 4)
+            png(b / f"{c}{suffix}.svg", b / "png" / f"{c}{suffix}-2x.png", w * 2)
+            png(b / f"{c}{suffix}.svg", b / "png" / f"{c}{suffix}-4x.png", w * 4)
         for s in CIRCLE_PNG_SIZES:
             png(b / "circle" / f"{c}.svg", b / "circle" / "png" / f"{c}-{s}.png", s)
         pdf(b / f"{c}.svg", b / "pdf" / f"{c}.pdf")
@@ -337,7 +337,7 @@ def build_pages():
     )
     asset_rows = "\n".join(
         f'<tr><td>{chip_html(t)}</td><td class="files"><a href="badge/{c}.svg">SVG</a><a href="badge/{c}-dark.svg">SVG dark</a>'
-        f'<a href="badge/png/{c}@2x.png">PNG</a><a href="badge/pdf/{c}.pdf">PDF</a></td>'
+        f'<a href="badge/png/{c}-2x.png">PNG</a><a href="badge/pdf/{c}.pdf">PDF</a></td>'
         f'<td class="files"><a href="badge/circle/{c}.svg">SVG</a><a href="badge/circle/png/{c}-256.png">PNG</a>'
         f'<a href="badge/dot/{c}.svg">Dot</a></td></tr>'
         for t in TIERS for c in [t["code"]]
@@ -446,7 +446,7 @@ Replace `CODE` with the tier code and `NAME` with its name. Put the badge where 
 | Dark background | Use `{BASE}/badge/CODE-dark.svg` |
 | Source file | A comment on the first lines: `HAI Scale: CODE — NAME · {BASE}/CODE/` |
 | Plain text, email, social post, video description | `HAI Scale: CODE — NAME · {BASE}/CODE/` |
-| Document or slides | Image `{BASE}/badge/png/CODE@4x.png`, linked to `{BASE}/CODE/` |
+| Document or slides | Image `{BASE}/badge/png/CODE-4x.png`, linked to `{BASE}/CODE/` |
 | Image or video overlay, small icon | `{BASE}/badge/circle/CODE.svg` or `{BASE}/badge/circle/png/CODE-512.png` |
 
 Do not recolour or redraw the badge.
