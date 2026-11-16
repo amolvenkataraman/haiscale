@@ -1,0 +1,17 @@
+Plain-text forms of a HAI Scale label, for places that cannot show an image.
+
+Video description, social post, email footer:
+  HAI Scale: A2 — Almost fully automated · https://haiscale.amolven.com/A2/
+
+Source file header:
+  // HAI Scale: A1 — Mostly automated · https://haiscale.amolven.com/A1/
+  # HAI Scale: HC — Human, checked · https://haiscale.amolven.com/HC/
+
+HTML head (machine-readable):
+  <meta name="hai-scale" content="M2">
+
+Image caption or alt text:
+  HAI Scale: H — Fully human
+
+Parts labelled separately:
+  Text: HAI Scale H · Illustrations: HAI Scale A2

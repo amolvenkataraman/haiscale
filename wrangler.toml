@@ -1,0 +1,12 @@
+# Static site for haiscale.amolven.com, served by Cloudflare Workers static assets.
+# Build first (python3 build.py), then deploy with: npx wrangler deploy
+name = "haiscale"
+compatibility_date = "2026-11-01"
+send_metrics = false
+
+routes = [
+  { pattern = "haiscale.amolven.com", custom_domain = true }
+]
+
+[assets]
+directory = "site"

@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAI Scale — say how much AI was used</title>
+<meta name="description" content="The HAI Scale (Human–AI Index) is a free, open, seven-tier label for disclosing how much AI was used to make something.">
+<meta name="hai-scale" content="M2">
+<meta property="og:title" content="HAI Scale — say how much AI was used">
+<meta property="og:description" content="A free, open, seven-tier label for disclosing how much AI was used to make something.">
+<meta property="og:image" content="{{BASE}}/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+{{TOPLINE}}
+<header class="nav" id="site-nav" data-scrolled="false">
+  <div class="wrap">
+    <a class="brand" href="#top">{{MARK}}<span>HAI Scale</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#scale">The scale</a>
+      <a href="#agents">For agents</a>
+      <a href="#examples">Examples</a>
+      <a href="#assets">Assets</a>
+      <a href="#faq">FAQ</a>
+      <a class="pill outline sm" href="#generator">Get your badge</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="wrap hero">
+  <div>
+    <h1>Say how much AI was used</h1>
+    <p class="lede">
+      A label you can add to your own work, from writing and images to video and code, saying how much
+      AI went into it. Seven tiers from fully human to fully automated, shown as one badge where people
+      start reading.
+    </p>
+    <p class="fine">
+      <strong>Voluntary and self-declared.</strong> Nobody checks or certifies it, and it isn't a legal
+      standard. The badge is your own word, like a byline. Free to use under the <a href="license/">HAI Scale License</a>, no sign-up.
+    </p>
+    <div class="cta">
+      <a class="pill primary lg" href="#generator">Get your badge</a>
+      <a class="pill ghost lg" href="#scale">Read the scale</a>
+    </div>
+  </div>
+  <div class="label" aria-label="The seven HAI Scale tiers">
+    <div class="label-head"><span class="t">HAI Scale</span><span class="v">v{{VERSION}}</span></div>
+    <div class="label-sub"><span>Tier</span><span>Most human first</span></div>
+    {{HERO_ROWS}}
+    <p class="label-foot">Self-declared by the maker. Not a certification or legal standard.</p>
+  </div>
+</div>
+
+<section id="scale">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Seven tiers, from human to automated</h2>
+      <a href="hai.json">hai.json</a>
+    </div>
+    <p class="lede">How much of the finished work came from AI, and how closely did a person check it? H is human, A is automated, M is the mix in between.</p>
+    <div class="scale">
+      {{SCALE_ROWS}}
+    </div>
+    <div class="axis"><span>← More human</span><span>More automated →</span></div>
+  </div>
+</section>
+
+<section id="generator">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Get the right badge for where it's going</h2>
+      <a href="#assets">Every file</a>
+    </div>
+    <p class="lede">Find your tier, say where the badge will live, and take the snippet or file that fits.</p>
+
+    <div class="stack">
+      <div class="picker" id="step-tier">
+        <div class="step">Step 1 · Your tier</div>
+        <div id="quiz"></div>
+        <div class="stack" style="gap:8px">
+          <div class="meta">Already know it? Pick it directly</div>
+          <div class="tiersel" id="tiersel" role="group" aria-label="Choose a tier"></div>
+        </div>
+      </div>
+
+      <div class="picker" id="step-place">
+        <div class="step">Step 2 · Where it's going</div>
+        <div class="opts" id="places" role="group" aria-label="Choose a placement"></div>
+        <div class="opts" id="themes" role="group" aria-label="Background">
+          <span class="meta" style="align-self:center;margin-right:4px">Background</span>
+        </div>
+      </div>
+
+      <div class="picker" id="step-out" aria-live="polite">
+        <div class="step">Step 3 · Your badge</div>
+        <div id="out"><p class="meta">Choose a tier above to see your badge.</p></div>
+      </div>
+    </div>
+    <noscript><p class="note">The generator needs JavaScript. Every badge file is also listed under <a href="#assets">Assets</a>.</p></noscript>
+  </div>
+</section>
+
+<section id="agents">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Let your agent add the badge</h2>
+      <a href="agents.md">agents.md</a>
+    </div>
+    <p class="lede">Point a coding or writing agent at one file and it can work out the tier and insert the badge itself.</p>
+    <p class="note" style="margin-bottom:20px"><strong>Using AI to choose or add the badge doesn't count as AI use.</strong> The tier describes how the content was made, not how the label got there. A hand-written essay that an agent labels for you is still {{T:H}}.</p>
+    <div class="grid two">
+      <div class="card">
+        <h3 class="serif">Paste this into your agent</h3>
+        <div class="snip" data-copy><div class="snip-head"><span>Prompt</span></div><pre>Read {{BASE}}/agents.md and add the right HAI Scale badge to this project. Tell me which tier you chose and why.</pre></div>
+      </div>
+      <div class="card">
+        <h3 class="serif">Or link the instructions</h3>
+        <p>One Markdown file with the tiers, the decision steps and the exact snippets for every placement.</p>
+        <div class="snip" data-copy><div class="snip-head"><span>Link</span></div><pre>{{BASE}}/agents.md</pre></div>
+        <p><a href="agents.md">Open agents.md</a> · also listed in <a href="llms.txt">llms.txt</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Four rules</h2>
+    </div>
+    <ol class="rules">
+      <li><span class="n">01</span><div><h3>Put it where people start</h3><p>Byline, title page, first seconds of a video, top of a README. A badge buried at the end discloses nothing.</p></div></li>
+      <li><span class="n">02</span><div><h3>Label the finished work</h3><p>Judge what was published, not every draft along the way. If parts differ a lot, label the parts separately.</p></div></li>
+      <li><span class="n">03</span><div><h3>When unsure, go one tier up</h3><p>If you're torn between two tiers, choose the more automated one. Over-disclosing costs nothing; under-disclosing costs trust.</p></div></li>
+      <li><span class="n">04</span><div><h3>Don't restyle the badge</h3><p>Keep the colours and codes as they are so people learn to recognise them. Use the chip by default and the circle only where a chip can't fit.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="examples">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What it looks like in place</h2>
+      <a href="examples/blog-post.html">Full examples</a>
+    </div>
+    <div class="grid three">
+      <div class="card">
+        <div class="ex-kind">Blog post</div>
+        <h3 class="serif">Notes from a year of sourdough</h3>
+        <div class="ex-byline"><span class="avatar" aria-hidden="true">SO</span><span>Sam Okafor · 6 min read</span></div>
+        <div>{{EX_CHIP}}</div>
+        <p>The chip sits in the byline, next to who wrote it and when.</p>
+      </div>
+      <div class="card">
+        <div class="ex-kind">Photo</div>
+        <div class="photo">
+          <svg viewBox="0 0 400 260" role="img" aria-label="Example landscape photo">
+            <rect width="400" height="260" fill="#D7CBAE"/><circle cx="320" cy="62" r="30" fill="#E9DFC6"/>
+            <path d="M0 180 L120 120 L210 170 L300 115 L400 165 L400 260 L0 260 Z" fill="#8F8257"/>
+          </svg>
+          {{EX_CIRCLE}}
+        </div>
+        <p>No room for a label, so the circle goes in a corner.</p>
+      </div>
+      <div class="card readme">
+        <div class="ex-kind">README</div>
+        <h3 class="serif">weekend-planner</h3>
+        <div class="badges">
+          <span class="shield"><span class="l">build</span><span class="r">passing</span></span>
+          <span class="shield"><span class="l">license</span><span class="r">MIT</span></span>
+          <img src="badge/A1.svg" alt="HAI Scale: A1 — Mostly automated" height="24">
+        </div>
+        <p>In the badge row, alongside build status and licence.</p>
+      </div>
+    </div>
+    <p class="meta" style="margin-top:20px">Full files: <a href="examples/blog-post.html">blog post</a> · <a href="examples/README-example.md">README</a> · <a href="examples/plain-text.txt">plain-text forms</a></p>
+  </div>
+</section>
+
+<section id="assets">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Every file</h2>
+      <a href="hai-scale-kit.zip" download>Download the kit</a>
+    </div>
+    <p class="lede">The chip is the default badge. The circle is for corners and icons; the dot is the circle without text, for anything under 24 pixels.</p>
+    <div class="tablebox">
+      <table class="dl">
+        <thead><tr><th>Tier</th><th>Chip</th><th>Circle</th></tr></thead>
+        <tbody>
+          {{ASSET_ROWS}}
+        </tbody>
+      </table>
+    </div>
+    <div class="downloads">
+      <a class="pill primary md" href="hai-scale-kit.zip" download>Download everything (zip)</a>
+      <a class="pill ghost md" href="logo/hai-mark.svg" download>Logo (SVG)</a>
+      <a class="pill ghost md" href="logo/hai-lockup.svg" download>Logo with name (SVG)</a>
+    </div>
+    <div class="grid two" style="margin-top:40px">
+      <div class="card">
+        <h3>For machines</h3>
+        <p>Add one tag to a page's <code>&lt;head&gt;</code> so tools can read the tier without parsing the badge:</p>
+        <div class="snip"><pre>&lt;meta name="hai-scale" content="A1"&gt;</pre></div>
+        <p>The full scale definition, with colours and URLs, is published as <a href="hai.json">hai.json</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Stable URLs</h3>
+        <p>Each tier has a permanent page and badge address you can link or hotlink:</p>
+        <div class="snip"><pre>{{BASE}}/A1/
+{{BASE}}/badge/A1.svg
+{{BASE}}/badge/circle/A1.svg</pre></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Questions</h2>
+    </div>
+    <div class="faq">
+    <details><summary>Is this a legal or official standard?</summary><p>No. It's a voluntary convention that one person started and anyone can use. It isn't certified, audited or recognised by any regulator, and it doesn't replace any disclosure a law, publisher or platform requires of you.</p></details>
+    <details><summary>Does anyone verify the badge?</summary><p>No. It is a self-declaration, like a byline. The badge says what the maker reports, and their reputation stands behind it.</p></details>
+    <details><summary>What counts as AI?</summary><p>Generative and machine-learning systems that produce or judge content: chat assistants, image and audio generators, coding agents, AI grammar and review tools. Deterministic tools such as spellcheck, calculators, filters and compilers do not count.</p></details>
+    <details><summary>I used AI only to brainstorm. Which tier?</summary><p>If none of its output ended up in the work, {{T:HC}}. If its ideas or wording shaped what you published, {{T:M1}} or higher.</p></details>
+    <details><summary>AI fixed my grammar and reworded a few sentences. Is that still HC?</summary><p>Yes. {{T:HC}} covers checking and minor touch-ups that don't change the content: typos, grammar, simple rewording. Once AI writes new passages or changes what the work says, it is {{T:M1}}.</p></details>
+    <details><summary>My project has parts with very different AI involvement.</summary><p>Label the whole with the tier that best describes it overall, or label the parts separately: for example, text {{T:H}} and illustrations {{T:A2}}.</p></details>
+    <details><summary>An AI picked my tier and added the badge. Does that change the tier?</summary><p>No. The badge covers the content only. Using an AI to choose or insert the label is not counted.</p></details>
+    <details><summary>Is a higher tier worse?</summary><p>No. The scale describes how something was made, not how good it is. The point is that people can tell.</p></details>
+    <details><summary>Can I use it commercially? Do I need permission?</summary><p>Yes, and no permission needed. The <a href="license/">HAI Scale License</a> lets anyone use the scale for free, including on commercial work, with three conditions: label truthfully, keep the tiers and badges intact, and don't sell access to the scale itself. Charging for your own product that shows a badge is fine.</p></details>
+    <details><summary>Will the tiers change?</summary><p>This is version {{VERSION}}. The seven codes are meant to stay stable; wording may be refined. Changes will be versioned here.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="sig">
+        <img src="autograph.svg" alt="Amol Venkataraman's signature" width="240" height="135">
+        <p>Made and maintained by Amol Venkataraman · <a href="https://amolven.com">amolven.com</a></p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#generator">Get your badge</a>
+        <a href="agents.md">agents.md</a>
+        <a href="#scale">The scale</a>
+        <a href="hai.json">hai.json</a>
+        <a href="#faq">FAQ</a>
+        <a href="hai-scale-kit.zip">Asset kit</a>
+        <a href="license/">License</a>
+      </nav>
+    </div>
+    <div class="made" id="made">
+      <div class="made-head">
+        <h2>How this was made</h2>
+        <span class="made-overall">Overall {{SITE_CHIP}}</span>
+      </div>
+      <ul class="made-list">
+        {{MADE_ROWS}}
+      </ul>
+    </div>
+    <p class="copyright">HAI Scale v{{VERSION}} · the Human-AI Index</p>
+  </div>
+</footer>
+
+<script>
+const TIERS = {{TIERS_JSON}};
+const BASE = "{{BASE}}";
+const byCode = Object.fromEntries(TIERS.map(t => [t.code, t]));
+const state = { tier: null, place: "web", theme: "light" };
+const $ = id => document.getElementById(id);
+const el = (tag, props = {}, kids = []) => {
+  const n = Object.assign(document.createElement(tag), props);
+  kids.forEach(k => n.append(k));
+  return n;
+};
+const alt = t => `HAI Scale: ${t.code} — ${t.name}`;
+
+/* Step 1: guided questions */
+const QUIZ = {
+  start: { q: "Was any AI used at any point, even just to check the work?", a: [["No, none", "=H"], ["Yes", "kept"]] },
+  kept: { q: "Did AI add or change any content, beyond minor fixes like grammar or simple rewording?", a: [["No, only checks and minor fixes", "=HC"], ["Yes", "share"]] },
+  share: { q: "Who produced most of the finished work?", a: [["Mostly me; AI helped near the end", "=M1"], ["About half and half", "=M2"], ["Mostly AI", "review"]] },
+  review: { q: "How involved was a person while the AI worked?", a: [["Steering, testing and verifying throughout", "=A1"], ["Prompts, then one final check", "=A2"], ["Nobody reviewed it before release", "=AF"]] },
+};
+function renderQuiz(node = "start") {
+  const box = $("quiz");
+  box.replaceChildren();
+  if (node.startsWith("=")) {
+    const t = byCode[node.slice(1)];
+    box.append(el("div", { className: "result" }, [
+      el("span", { className: "circle", textContent: t.code, style: `background:${t.color};color:${t.text}` }),
+      el("div", {}, [
+        el("div", { className: "q", textContent: `${t.code} · ${t.name}` }),
+        el("div", { className: "meta", textContent: t.short }),
+      ]),
+    ]), el("button", { className: "linkbtn", textContent: "Start over", onclick: () => renderQuiz() }));
+    setTier(t.code);
+    return;
+  }
+  const step = QUIZ[node];
+  box.append(
+    el("div", { className: "q", textContent: step.q }),
+    el("div", { className: "opts", style: "margin-top:12px" }, step.a.map(([text, next]) =>
+      el("button", { type: "button", textContent: text, onclick: () => renderQuiz(next) }))),
+  );
+}
+
+/* Step 2: placements */
+const chipFile = (c, ext = "svg") => `badge/${c}${state.theme === "dark" ? "-dark" : ""}.${ext}`;
+const chipPng = (c, x) => `badge/png/${c}${state.theme === "dark" ? "-dark" : ""}@${x}x.png`;
+const line = t => `${alt(t)} · ${BASE}/${t.code}/`;
+const PLACES = [
+  { id: "web", label: "Website or blog", style: "chip",
+    tip: "Put it in the byline of an article, or in the footer for a whole site.",
+    snippets: t => [
+      ["HTML", `<a href="${BASE}/${t.code}/"><img src="${BASE}/${chipFile(t.code)}" alt="${alt(t)}" height="32"></a>`],
+      ["Meta tag (in <head>)", `<meta name="hai-scale" content="${t.code}">`]],
+    files: t => [["Chip SVG", chipFile(t.code)], ["Chip PNG @2x", chipPng(t.code, 2)]] },
+  { id: "readme", label: "GitHub README", style: "chip",
+    tip: "Add it to the badge row at the top, next to build status and licence.",
+    snippets: t => [["Markdown", `[![${alt(t)}](${BASE}/badge/${t.code}.svg)](${BASE}/${t.code}/)`]],
+    files: t => [["Chip SVG", `badge/${t.code}.svg`]] },
+  { id: "doc", label: "Document or PDF", style: "chip",
+    tip: "Place the image on the title page or in the first-page header, and link it to the tier page. Word and Google Docs need the PNG.",
+    snippets: t => [["Text line (for a footer or colophon)", line(t)]],
+    files: t => [["Chip PNG @4x", chipPng(t.code, 4)], ["Chip PNG @2x", chipPng(t.code, 2)], ["Chip PDF (vector)", `badge/pdf/${t.code}.pdf`]] },
+  { id: "slides", label: "Slides", style: "chip",
+    tip: "Put it on the title slide, bottom corner.",
+    snippets: t => [["Speaker-note or footer text", line(t)]],
+    files: t => [["Chip PNG @4x", chipPng(t.code, 4)], ["Chip SVG", chipFile(t.code)]] },
+  { id: "video", label: "Video", style: "circle",
+    tip: "Overlay the circle in a corner for at least the first five seconds, and repeat the tier in the description. Use the chip on a title or end card. PNGs have transparent backgrounds.",
+    snippets: t => [["Description line", line(t)]],
+    files: t => [["Circle PNG 512", `badge/circle/png/${t.code}-512.png`], ["Circle PNG 256", `badge/circle/png/${t.code}-256.png`], ["Chip PNG @4x (title card)", chipPng(t.code, 4)]] },
+  { id: "image", label: "Photo or image", style: "circle",
+    tip: "Put the circle in a corner, at least 32 pixels wide, and mention the tier in the caption or alt text.",
+    snippets: t => [["Caption or alt text", alt(t)]],
+    files: t => [["Circle SVG", `badge/circle/${t.code}.svg`], ["Circle PNG 256", `badge/circle/png/${t.code}-256.png`], ["Circle PNG 128", `badge/circle/png/${t.code}-128.png`]] },
+  { id: "social", label: "Social post", style: "text",
+    tip: "Add the line to the end of the post. For image posts, also stamp the circle on the image.",
+    snippets: t => [["Post text", `${alt(t)} · ${BASE.replace("https://", "")}/${t.code}`]],
+    files: t => [["Circle PNG 256", `badge/circle/png/${t.code}-256.png`]] },
+  { id: "email", label: "Email or newsletter", style: "chip",
+    tip: "Most email clients don't render SVG, so use the PNG, and keep a text line for plain-text readers.",
+    snippets: t => [
+      ["HTML (PNG)", `<a href="${BASE}/${t.code}/"><img src="${BASE}/${chipPng(t.code, 2)}" alt="${alt(t)}" height="32"></a>`],
+      ["Plain text", line(t)]],
+    files: t => [["Chip PNG @2x", chipPng(t.code, 2)]] },
+  { id: "code", label: "Source code", style: "text",
+    tip: "Add a comment at the top of the file, or a line in the repository's README.",
+    snippets: t => [["// comment", `// ${line(t)}`], ["# comment", `# ${line(t)}`]],
+    files: () => [] },
+  { id: "print", label: "Print", style: "chip",
+    tip: "Use the vector PDF. Keep the circle at least 6 mm across and the chip at least 5 mm tall.",
+    snippets: t => [["Text line", line(t)]],
+    files: t => [["Chip PDF", `badge/pdf/${t.code}.pdf`], ["Circle PDF", `badge/circle/pdf/${t.code}.pdf`], ["Chip SVG", `badge/${t.code}.svg`]] },
+  { id: "icon", label: "App or tiny icon", style: "circle",
+    tip: "Use the circle at 24 pixels and up. Below that, use the dot, which drops the code and keeps the colour.",
+    snippets: t => [["HTML", `<img src="${BASE}/badge/circle/${t.code}.svg" alt="${alt(t)}" width="24" height="24">`]],
+    files: t => [["Circle SVG", `badge/circle/${t.code}.svg`], ["Dot SVG", `badge/dot/${t.code}.svg`], ["Circle PNG 64", `badge/circle/png/${t.code}-64.png`]] },
+];
+const STYLE_NAME = { chip: "Chip", circle: "Circle", text: "Text line" };
+
+function pressGroup(container, value) {
+  container.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === value)));
+}
+function setTier(code) { state.tier = code; pressGroup($("tiersel"), code); renderOut(); }
+
+function snippetBlock(title, text) {
+  const btn = el("button", { className: "copy", type: "button", textContent: "Copy" });
+  btn.onclick = async () => {
+    try { await navigator.clipboard.writeText(text); btn.textContent = "Copied"; }
+    catch { btn.textContent = "Select and copy"; }
+    setTimeout(() => (btn.textContent = "Copy"), 1600);
+  };
+  return el("div", { className: "snip" }, [
+    el("div", { className: "snip-head" }, [el("span", { textContent: title }), btn]),
+    el("pre", { textContent: text }),
+  ]);
+}
+
+function renderOut() {
+  const out = $("out");
+  if (!state.tier) return;
+  const t = byCode[state.tier];
+  const place = PLACES.find(p => p.id === state.place);
+  const preview = el("div", { className: "preview" });
+  preview.style.cssText = state.theme === "dark" ? "background:#1E1E1C;border-color:#45433C" : "background:#FAFAF6;border-color:#E7E2D6";
+  if (place.style === "chip") preview.append(el("img", { src: chipFile(t.code), alt: alt(t), height: 32 }));
+  if (place.style === "circle") preview.append(el("img", { src: `badge/circle/${t.code}.svg`, alt: alt(t), width: 56, height: 56 }));
+  if (place.style === "text") preview.append(el("code", { textContent: alt(t) }));
+  const files = place.files(t);
+  out.replaceChildren(
+    el("div", { className: "q", textContent: `${t.code} · ${t.name} — ${STYLE_NAME[place.style].toLowerCase()} for ${place.label.toLowerCase()}` }),
+    preview,
+    el("p", { className: "note", textContent: place.tip }),
+    ...place.snippets(t).map(([title, text]) => snippetBlock(title, text)),
+    ...(files.length ? [el("div", { className: "opts" }, files.map(([name, href]) =>
+      el("a", { className: "pill ghost md", href, download: "", textContent: name })))] : []),
+    el("p", { className: "meta" }, ["What this tier means: ", el("a", { href: `${t.code}/`, textContent: `${t.code} · ${t.name}` })]),
+  );
+}
+
+TIERS.forEach(t => $("tiersel").append(el("button", {
+  type: "button", textContent: t.code, title: alt(t), style: `background:${t.color};color:${t.text}`,
+  onclick: () => { $("quiz").replaceChildren(); renderQuiz("=" + t.code); },
+})));
+$("tiersel").querySelectorAll("button").forEach((b, i) => { b.dataset.v = TIERS[i].code; b.setAttribute("aria-label", alt(TIERS[i])); });
+PLACES.forEach(p => {
+  const b = el("button", { type: "button", textContent: p.label, onclick: () => { state.place = p.id; pressGroup($("places"), p.id); renderOut(); } });
+  b.dataset.v = p.id;
+  $("places").append(b);
+});
+[["light", "Light"], ["dark", "Dark"]].forEach(([v, name]) => {
+  const b = el("button", { type: "button", textContent: name, onclick: () => { state.theme = v; pressGroup($("themes"), v); renderOut(); } });
+  b.dataset.v = v;
+  $("themes").append(b);
+});
+const nav = $("site-nav");
+const onScroll = () => { nav.dataset.scrolled = String(window.scrollY > 8); };
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+const params = new URLSearchParams(location.search);
+if (PLACES.some(p => p.id === params.get("place"))) state.place = params.get("place");
+if (params.get("theme") === "dark") state.theme = "dark";
+document.querySelectorAll(".snip[data-copy]").forEach(box => {
+  const text = box.querySelector("pre").textContent;
+  const btn = el("button", { className: "copy", type: "button", textContent: "Copy" });
+  btn.onclick = async () => {
+    try { await navigator.clipboard.writeText(text); btn.textContent = "Copied"; }
+    catch { btn.textContent = "Select and copy"; }
+    setTimeout(() => (btn.textContent = "Copy"), 1600);
+  };
+  box.querySelector(".snip-head").append(btn);
+});
+pressGroup($("places"), state.place);
+pressGroup($("themes"), state.theme);
+renderQuiz(byCode[params.get("tier")] ? "=" + params.get("tier") : "start");
+</script>
+</body>
+</html>

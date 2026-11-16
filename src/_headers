@@ -1,0 +1,10 @@
+/*.txt
+  Content-Type: text/plain; charset=utf-8
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+/hai.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+/badge/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400

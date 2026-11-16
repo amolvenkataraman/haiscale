@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAI Scale License 1.0</title>
+<meta name="description" content="Free use of the HAI Scale, on three conditions: label truthfully, keep the scale intact, and don't sell access to it.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+{{TOPLINE}}
+<header class="nav" id="site-nav" data-scrolled="false">
+  <div class="wrap">
+    <a class="brand" href="../">{{MARK}}<span>HAI Scale</span></a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="../#scale">The scale</a>
+      <a href="../#faq">FAQ</a>
+      <a class="pill outline sm" href="../#generator">Get your badge</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="tier-hero">
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+      <div class="meta">Licence</div>
+      <h1>HAI Scale License 1.0</h1>
+    </div>
+  </div>
+  <p class="tier-means">
+    Use the scale for free, for anything, including commercial work. Three conditions: label truthfully,
+    keep the tiers and badges intact, and don't sell access to the scale itself.
+  </p>
+  <p class="tier-note">Plain-language summary. The full terms below are what apply. Also available as <a href="../LICENSE.md">LICENSE.md</a>.</p>
+  <article class="doc">
+{{BODY}}
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="sig">
+        <img src="../autograph.svg" alt="Amol Venkataraman's signature" width="240" height="135">
+        <p>Made and maintained by Amol Venkataraman · <a href="https://amolven.com">amolven.com</a></p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="../">All seven tiers</a>
+        <a href="../#generator">Get your badge</a>
+        <a href="../#faq">FAQ</a>
+        <a href="../#made">How this was made</a>
+      </nav>
+    </div>
+    <p class="copyright">HAI Scale v{{VERSION}} · the Human–AI Index · voluntary and self-declared</p>
+  </div>
+</footer>
+<script>
+const nav = document.getElementById("site-nav");
+const onScroll = () => { nav.dataset.scrolled = String(window.scrollY > 8); };
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+</script>
+</body>
+</html>

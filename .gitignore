@@ -1,0 +1,5 @@
+# Build output: regenerate with `python3 build.py`
+site/
+__pycache__/
+.wrangler/
+node_modules/

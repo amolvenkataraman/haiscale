@@ -1,0 +1,29 @@
+{
+  "overall": "M2",
+  "parts": [
+    {
+      "part": "The scale",
+      "detail": "Tiers, codes, names and definitions",
+      "tier": "HC",
+      "note": "Designed and written by Amol. AI proofread the wording."
+    },
+    {
+      "part": "Logo and visual design",
+      "detail": "Mark, badges, colours, layout",
+      "tier": "M2",
+      "note": "Amol's concepts and art direction. AI drew and refined the shapes to his notes."
+    },
+    {
+      "part": "Website copy and licence",
+      "detail": "Page text, FAQ, agent guide, licence",
+      "tier": "A1",
+      "note": "Drafted by AI from Amol's direction, then revised through his feedback."
+    },
+    {
+      "part": "Website code and assets",
+      "detail": "Build script, generator, badge files",
+      "tier": "A1",
+      "note": "Written by an AI coding agent. Amol steered and checked each change."
+    }
+  ]
+}
